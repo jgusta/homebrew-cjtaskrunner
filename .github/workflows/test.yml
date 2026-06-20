@@ -1,0 +1,20 @@
+name: Test Homebrew Formula
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: macos-latest
+
+    steps:
+      - name: Check out tap
+        uses: actions/checkout@v4
+
+      - name: Install formula from source
+        run: brew install --build-from-source ./Formula/cjtaskrunner.rb
+
+      - name: Test formula
+        run: brew test ./Formula/cjtaskrunner.rb
