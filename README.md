@@ -5,7 +5,5 @@ Homebrew tap for `cjtaskrunner`.
 ## Install
 
 ```sh
-brew install jgusta/cjtaskrunner/cjtaskrunner
+brew install jgusta/cjtaskrunner/cj
 ```
-
-function{}

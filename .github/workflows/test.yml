@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Check out tap
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install formula from source
-        run: brew install --build-from-source ./Formula/cjtaskrunner.rb
+        run: brew install --build-from-source ./Formula/cj.rb
 
       - name: Test formula
-        run: brew test ./Formula/cjtaskrunner.rb
+        run: brew test ./Formula/cj.rb

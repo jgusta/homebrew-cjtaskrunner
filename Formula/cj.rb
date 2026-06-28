@@ -1,4 +1,4 @@
-class Cjtaskrunner < Formula
+class Cj < Formula
   desc "Command-line task runner"
   homepage "https://github.com/jgusta/cjtaskrunner"
   url "https://github.com/jgusta/cjtaskrunner/archive/refs/tags/v0.1.0.tar.gz"
@@ -13,6 +13,6 @@ class Cjtaskrunner < Formula
   end
 
   test do
-    system "#{bin}/cjtaskrunner", "--help"
+    system "#{bin}/cj", "--help"
   end
 end
