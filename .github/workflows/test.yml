@@ -13,8 +13,11 @@ jobs:
       - name: Check out tap
         uses: actions/checkout@v6
 
+      - name: Register local tap
+        run: brew tap jgusta/cjtaskrunner "$PWD"
+
       - name: Install formula from source
-        run: brew install --build-from-source ./Formula/cj.rb
+        run: brew install --HEAD --build-from-source jgusta/cjtaskrunner/cj
 
       - name: Test formula
-        run: brew test ./Formula/cj.rb
+        run: brew test jgusta/cjtaskrunner/cj
