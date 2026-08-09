@@ -16,6 +16,25 @@ jobs:
       - name: Register local tap
         run: brew tap jgusta/cjtaskrunner "$PWD"
 
+      - name: Configure source repository access
+        env:
+          CJ_SOURCE_TOKEN: ${{ secrets.CJ_SOURCE_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          if git ls-remote https://github.com/jgusta/cjtaskrunner.git HEAD >/dev/null 2>&1; then
+            exit 0
+          fi
+
+          if [ -z "$CJ_SOURCE_TOKEN" ]; then
+            echo "::error::Homebrew cannot clone jgusta/cjtaskrunner. Make the source repo public or add a CJ_SOURCE_TOKEN secret with read access to that repo."
+            exit 1
+          fi
+
+          git config --global \
+            url."https://x-access-token:${CJ_SOURCE_TOKEN}@github.com/".insteadOf \
+            "https://github.com/"
+
       - name: Install formula from source
         run: brew install --HEAD --build-from-source jgusta/cjtaskrunner/cj
 
