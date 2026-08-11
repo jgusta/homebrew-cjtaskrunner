@@ -1,8 +1,8 @@
 class Cj < Formula
   desc "Command-line task runner"
   homepage "https://github.com/jgusta/cjtaskrunner"
-  url "https://github.com/jgusta/cjtaskrunner/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "c564fd55db66a62947850262dd8fea64070f70745c1098dac6cac91c05355bf9"
+  url "https://github.com/jgusta/cjtaskrunner/archive/refs/tags/v0.0.0-alpha.tar.gz"
+  sha256 "135f68dd8a5e518a0cc548f9fe654c5ba891b7d22dd7951329d3a19dfe48af4d"
   license "MIT"
   head "https://github.com/jgusta/cjtaskrunner.git", branch: "main"
 
